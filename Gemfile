@@ -14,16 +14,19 @@ group :production do
 end
 
 gem 'haml-rails', '~> 0.2'
-gem 'jquery-rails', '~> 0.1.2'
+gem 'jquery-rails', '~> 0.2'
 gem 'formtastic', '~> 1.1.0'
+# gem 'devise', :path => '/Users/a5sk4s/Development/rails3final/devise_ak'
 gem 'devise', '~> 1.1.2'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.22'
   gem 'cucumber-rails', '~> 0.3.2'
   gem 'factory_girl_rails', '~> 1.0'
-  gem 'autotest', '~> 4.3.2'
+  gem 'autotest', '~> 4.4'
+  gem 'capybara', '~> 0.3.9'
   gem 'webrat', '~> 0.7.2.beta.1'
+  gem 'spork', '>= 0.9.0.rc2'
 end
 
 # Use unicorn as the web server
@@ -33,7 +36,9 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug'
+# group :development, :test do
+#   gem 'ruby-debug19'
+# end
 
 # Bundle the extra gems:
 # gem 'bj'

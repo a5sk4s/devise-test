@@ -1,4 +1,11 @@
 DeviseExample::Application.routes.draw do
+  devise_for :users
+  devise_scope :user do 
+    root :to => "users#current"
+    get '/users/current' => "users#current", :as => :current_user
+    resources :users, :only => [:index, :show]
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

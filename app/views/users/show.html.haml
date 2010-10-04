@@ -1,0 +1,38 @@
+%p
+  %b Email:
+  = @user.email
+
+%p
+  %b Login count:
+  = @user.sign_in_count
+
+%p
+  %b Last request at:
+  = "Not yet supported" # = @user.last_request_at
+
+%p
+  %b Current login at:
+  = @user.current_sign_in_at
+
+%p
+  %b Current login ip:
+  = @user.current_sign_in_ip
+
+%p
+  %b Failed login count:
+  = @user.failed_attempts
+
+%p
+  %b Last login at:
+  = @user.last_sign_in_at
+
+%p
+  %b Last login ip:
+  = @user.last_sign_in_ip
+
+- if @user == current_user
+  = link_to 'Edit', edit_user_registration_path
+  \|
+  = link_to 'Destroy', user_registration_path, :confirm => 'Are you sure?', :method => :delete
+  \|
+= link_to 'Users', users_path
