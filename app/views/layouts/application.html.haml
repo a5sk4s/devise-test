@@ -6,6 +6,14 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
   %body
+    - if current_user
+      = link_to "Account", user_path(current_user)
+      = link_to "Logout", logout_path, :method => :delete, :confirm => "Are you sure you want to logout?"
+    - else
+      = link_to "Register", register_path
+      = link_to "Forgot Password", forgot_path
+      = link_to "Login", login_path
+
     %p{ :class => 'notice' }= notice
     %p{ :class => 'alert' }= alert
     = yield

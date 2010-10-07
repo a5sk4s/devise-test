@@ -18,8 +18,6 @@ gem 'jquery-rails', '~> 0.2'
 gem 'formtastic', '~> 1.1.0'
 # gem 'devise', :path => '/Users/a5sk4s/Development/rails3final/devise_ak'
 gem 'devise', '~> 1.1.3'
-gem 'hpricot', '~> 0.8.2'
-gem 'ruby_parser', '~> 2.0.5'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.22'
@@ -29,6 +27,10 @@ group :development, :test do
   gem 'capybara', '~> 0.3.9'
   gem 'webrat', '~> 0.7.2.beta.1'
   gem 'spork', '>= 0.9.0.rc2'
+  gem 'email_spec', '~> 1.0.0'
+
+  gem 'hpricot', '~> 0.8.2'
+  gem 'ruby_parser', '~> 2.0.5'
 end
 
 # Use unicorn as the web server

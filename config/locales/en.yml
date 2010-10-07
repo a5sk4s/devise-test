@@ -2,4 +2,32 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  hello: "Hello world"  
+  formtastic:
+    actions:
+      login: "Login"
+      user:
+        create: "Register"
+        update: "Save"
+        confirm: "Confirm"
+        reset: "Reset"
+
+  devise:
+    failure:
+      unauthenticated: 'You must be logged in to access this page.'
+      invalid: 'Credentials are not valid.'
+    sessions:
+      signed_in: 'Login successful.'
+      signed_out: 'Logout successful.'
+    passwords:
+      send_instructions: 'Instructions to reset your password have been emailed to you.'
+      updated: 'Password updated'
+    confirmations:
+      confirmed: 'Your account has been activated.'
+    registrations:
+      signed_up: 'Account created.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Activation Instructions'
+      reset_password_instructions:
+        subject: 'Reset Password Instructions'

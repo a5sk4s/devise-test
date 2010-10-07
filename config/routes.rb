@@ -1,8 +1,9 @@
 DeviseExample::Application.routes.draw do
   devise_for :users do
     get "/register" => "devise/registrations#new"
+    get "/forgot" => "devise/passwords#new"
     get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"
+    match "/logout" => "devise/sessions#destroy"
   end
   devise_scope :user do 
     root :to => "users#current"

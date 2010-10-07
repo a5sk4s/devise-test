@@ -1,16 +1,12 @@
-%h1 Account
-
-= semantic_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| 
+= semantic_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put } do |f|
   = f.inputs do
-    = f.input :email, :label => 'Email'
+    = f.input :reset_password_token, :as => :hidden
     = f.input :password, :label => 'Password', :hint => "#{password_meter()} Please use at least one upper-case, lower-case, digit and special character.".html_safe
     // = render :partial => 'password_meter'
     = f.input :password_confirmation, :label => 'Password confirmation'
 
-    = f.input :current_password, :label => 'Current password', :hint => "We need your current password to confirm your changes."
-
   = f.buttons do
-    = f.commit_button true
+    = f.commit_button :reset
 = javascript_include_tag 'pwd_meter'
 :javascript
   $(document).ready(function() {
@@ -18,7 +14,3 @@
       chkPass(this.value);
     });
   })
-
-= link_to 'Show', @user
-\|
-= link_to 'Users', users_path

@@ -1,13 +1,9 @@
-%h1 Account
-
 = semantic_form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| 
   = f.inputs do
     = f.input :email, :label => 'Email'
     = f.input :password, :label => 'Password', :hint => "#{password_meter()} Please use at least one upper-case, lower-case, digit and special character.".html_safe
     // = render :partial => 'password_meter'
     = f.input :password_confirmation, :label => 'Password confirmation'
-
-    = f.input :current_password, :label => 'Current password', :hint => "We need your current password to confirm your changes."
 
   = f.buttons do
     = f.commit_button true
@@ -18,7 +14,3 @@
       chkPass(this.value);
     });
   })
-
-= link_to 'Show', @user
-\|
-= link_to 'Users', users_path
