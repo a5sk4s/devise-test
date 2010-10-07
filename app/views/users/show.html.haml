@@ -1,6 +1,6 @@
 %p
   %b Email:
-  = @user.email
+  = display(@user.email)
 
 %p
   %b Login count:
@@ -16,7 +16,7 @@
 
 %p
   %b Current login ip:
-  = @user.current_sign_in_ip
+  = display(@user.current_sign_in_ip)
 
 %p
   %b Failed login count:
@@ -28,7 +28,7 @@
 
 %p
   %b Last login ip:
-  = @user.last_sign_in_ip
+  = display(@user.last_sign_in_ip)
 
 - if @user == current_user
   = link_to 'Edit', edit_user_registration_path

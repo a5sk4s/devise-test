@@ -17,7 +17,9 @@ gem 'haml-rails', '~> 0.2'
 gem 'jquery-rails', '~> 0.2'
 gem 'formtastic', '~> 1.1.0'
 # gem 'devise', :path => '/Users/a5sk4s/Development/rails3final/devise_ak'
-gem 'devise', '~> 1.1.2'
+gem 'devise', '~> 1.1.3'
+gem 'hpricot', '~> 0.8.2'
+gem 'ruby_parser', '~> 2.0.5'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.0.beta.22'
