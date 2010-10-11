@@ -21,11 +21,11 @@ en:
       signed_out: 'Logout successful.'
     passwords:
       send_instructions: 'Instructions to reset your password have been emailed to you.'
-      updated: 'Password updated'
+      updated: 'Password updated.'
     confirmations:
       confirmed: 'Your account has been activated.'
     registrations:
-      signed_up: 'Account created.'
+      signed_up: 'Account created. Please check your e-mail for your account activation.'
     mailer:
       confirmation_instructions:
         subject: 'Activation Instructions'

@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "devise/registrations/edit.html.haml" do
   before(:each) do
-    @user = assign(:user, stub_model(User,
-      :new_record? => false
-    ))
+    @user = assign(:user, stub_model(User))
     @view.stub(:resource).and_return(@user)
     @view.stub(:resource_name).and_return('user')
     @view.stub(:devise_mapping).and_return(Devise.mappings[:user])
