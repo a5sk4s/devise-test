@@ -1,14 +1,14 @@
 DeviseExample::Application.routes.draw do
-  devise_for :users do
+  devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout' } do
     get "/register" => "devise/registrations#new"
     get "/forgot" => "devise/passwords#new"
     get "/login" => "devise/sessions#new"
-    match "/logout" => "devise/sessions#destroy"
+    delete "/logout" => "devise/sessions#destroy"
   end
   devise_scope :user do 
-    root :to => "users#current"
     get '/users/current' => "users#current", :as => :current_user
     resources :users, :only => [:index, :show]
+    root :to => "users#current"
   end
   
   # The priority is based upon order of creation:

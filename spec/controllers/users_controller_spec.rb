@@ -10,7 +10,6 @@ describe UsersController do
   describe "when no user is authenticated" do
     before(:each) do
       request.env["devise.mapping"] = Devise.mappings[:user]
-      @user = Factory.create(:valid_user)
     end
 
     describe "GET index" do
@@ -43,8 +42,9 @@ describe UsersController do
   describe "when a user is authenticated" do
     before(:each) do
       request.env["devise.mapping"] = Devise.mappings[:user]
-      @user = Factory.create(:valid_user)
-      sign_in @user
+      cu = Factory.create(:valid_user)
+      User.stub(:find).with(:first, {:conditions => {:id => cu.id}}) { cu }
+      sign_in cu
     end
 
     describe "GET index" do
